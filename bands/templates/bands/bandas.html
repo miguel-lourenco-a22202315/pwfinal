@@ -1,0 +1,20 @@
+{% extends 'bands/layout.html' %}
+{% block content %}
+    <style>
+    </style>
+
+    <h2 class="title">Bandas icónicas</h2>
+
+    <ul>
+        {% for banda in bandas %}
+            <div class="banda-container">
+                <div class="banda-box">
+                    <p><a href="https://a22202315.pythonanywhere.com/Bandas/banda/{{ banda.nome }}/">{{ banda.nome }}</a></p>
+                    <p class="descricao2">{{ banda.biografia }}</p>
+                    <img src="{{ banda.imagemintegrantes.url }}" class="imagem-borda">
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

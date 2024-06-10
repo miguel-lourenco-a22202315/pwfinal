@@ -1,0 +1,64 @@
+{
+  "bandas": [
+    {
+      "nome": "Led Zeppelin",
+      "genero": "Rock",
+      "nacionalidade": "Reino Unido",
+      "ano_criacao": 1968
+    },
+    {
+      "nome": "Queen",
+      "genero": "Rock",
+      "nacionalidade": "Reino Unido",
+      "ano_criacao": 1970
+    },
+    {
+      "nome": "The Rolling Stones",
+      "genero": "Rock",
+      "nacionalidade": "Reino Unido",
+      "ano_criacao": 1962
+    },
+    {
+      "nome": "AC/DC",
+      "genero": "Rock",
+      "nacionalidade": "Austrália",
+      "ano_criacao": 1973
+    },
+    {
+      "nome": "Pink Floyd",
+      "genero": "Rock",
+      "nacionalidade": "Reino Unido",
+      "ano_criacao": 1965
+    },
+    {
+      "nome": "The Beatles",
+      "genero": "Rock",
+      "nacionalidade": "Reino Unido",
+      "ano_criacao": 1960
+    },
+    {
+      "nome": "Nirvana",
+      "genero": "Rock",
+      "nacionalidade": "Estados Unidos",
+      "ano_criacao": 1987
+    },
+    {
+      "nome": "U2",
+      "genero": "Rock",
+      "nacionalidade": "Irlanda",
+      "ano_criacao": 1976
+    },
+    {
+      "nome": "Guns N' Roses",
+      "genero": "Rock",
+      "nacionalidade": "Estados Unidos",
+      "ano_criacao": 1985
+    },
+    {
+      "nome": "The Doors",
+      "genero": "Rock",
+      "nacionalidade": "Estados Unidos",
+      "ano_criacao": 1965
+    }
+  ]
+}

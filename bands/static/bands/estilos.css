@@ -1,0 +1,559 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: #D3D3D3;
+    margin: 0;
+    padding: 0;
+    border: none;
+    padding-top: 0;
+       margin-bottom: 0; /
+         padding-bottom: 100px;
+}
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    margin: 0;
+}
+
+
+.header-grid {
+    display: grid;
+    grid-template-areas:
+        "title title title"
+        ". logo ."
+        "user-actions . band-actions";
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    height: auto;
+}
+
+/* Cores */
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: red;
+    --cor-texto: #333;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+a:link {
+    color: var(--cor-primaria);
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: purple;
+}
+
+/* Estilizar ícones */
+a button i {
+    margin-right: 5px;
+}
+
+.descricao::first-letter {
+    font-size: 125%;
+    font-weight: bold;
+    color: gray;
+}
+
+.descricao::first-line {
+    font-style: italic;
+}
+
+.titulo {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Estilos das bordas das imagens */
+.imagem-borda {
+    width: 500px;
+    height: auto;
+    border: 3px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    overflow: hidden;
+}
+
+
+
+.imagem-borda img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    max-height: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+}
+
+
+.imagem-borda-roxa {
+    border: 2px solid #ff00ff;
+}
+
+
+.helptext {
+    font-size: smaller;
+    color: #888;
+}
+
+.header-title {
+    grid-area: title;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.header-logo {
+    grid-area: logo;
+    text-align: center;
+    margin: 0 auto; /* Centraliza o logo horizontalmente */
+}
+
+.user-actions {
+    grid-area: user-actions;
+    justify-self: start; /* Alinha o conteúdo à esquerda */
+}
+
+.band-actions {
+    grid-area: band-actions;
+    justify-self: end;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.vertical-list {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos um abaixo do outro */
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o preenchimento padrão */
+}
+
+.vertical-list li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens */
+}
+
+
+ .grid-banda {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+.titulo {
+    grid-column: 1 / 2;
+    text-align: center;
+    margin-bottom: 120px; /* Adiciona espaçamento abaixo do título */
+    font-size: 24px; /
+}
+
+.descricao {
+    grid-column: 1 / 2;
+    margin-bottom: 20px;
+}
+
+.descricao2 {
+    margin-bottom: 250px;
+}
+
+.descricao2 p {
+    margin-bottom: 60px;
+}
+
+.descricao3 {
+    margin-bottom: 150px;
+}
+
+.info {
+    grid-column: 2/2; /* Ocupa a segunda coluna */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+  margin-top: 120px;
+}
+
+.imagem-borda {
+    display: flex;
+    justify-content: center;
+}
+
+.info2 {
+    margin-bottom: 50px;
+}
+
+
+.ano-lancamento {
+    color: gray;
+}
+
+.grid-albuns {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+    gap: 20px; /* Espaçamento entre as colunas */
+    margin-bottom: 250px; /* Adiciona espaço em branco abaixo da div */
+}
+
+.grid-albuns h2 {
+    grid-column: 1 / span 2; /* Ocupa as duas colunas */
+}
+
+.grid-albuns h3,
+.grid-albuns p {
+    grid-column: 1;
+}
+
+.grid-albuns ul {
+    grid-column: 1 / span 2;
+}
+
+.grid-albuns button {
+    grid-column: 1 / span 2;
+}
+
+.grid-musicas {
+            display: flex;
+            flex-direction: column; /* Alinha as caixas em coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            margin-top: 20px;
+        }
+
+
+
+.grid-musicas h3 {
+    margin: 0; /* Remove a margem padrão */
+}
+
+.grid-musicas p {
+    margin-top: 5px; /* Adiciona espaçamento superior para a letra da música */
+}
+
+.grid-musicas i.fas.fa-music {
+    grid-column: 1; /* Ocupa a primeira coluna */
+}
+
+.grid-musicas h3,
+.grid-musicas p,
+.grid-musicas button {
+    grid-column: 1;
+}
+
+.grid-musicas p {
+    margin-top: 5px; /* Adiciona espaçamento superior para a letra da música */
+    max-width: 200px;
+    word-wrap: break-word; /* Permite que o texto quebre em várias linhas */
+    padding-left: 50px;
+}
+
+
+
+ .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #696969;
+            font-size: 30px; /* Define o tamanho do título */
+        }
+        .banda-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .banda-box {
+            background: #A9A9A9;
+            position: relative;
+            width: 600px; /* Aumente a largura conforme necessário */
+            border: 1px solid #ccc;
+            padding: 20px; /* Aumente o padding para tornar as caixas maiores */
+            text-align: center; /* Centraliza o texto */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* Adicione esta linha para bordas arredondadas */
+        }
+        .banda-box a {
+            display: block; /* Faz o link ocupar toda a largura */
+            margin-bottom: 10px;
+        }
+        .banda-box p {
+            margin-bottom: 20px; /* Espaçamento entre o texto e a imagem */
+        }
+        .banda-box img {
+            display: block;
+            margin: 0 auto 10px; /* Centraliza horizontalmente e adiciona espaçamento inferior */
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+
+ .titulobandas {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #666;
+        }
+        .grid-banda {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .banda-container2 {
+            display: flex;
+            align-items: flex-start; /* Alinha os elementos no início do eixo vertical */
+            width: 1000px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .descricao-container {
+            flex: 1; /* Ocupa todo o espaço disponível */
+            max-width: 600px;
+            text-align: left;
+            margin-right: 20px;
+        }
+        .descricao-container .titulo {
+            text-align: center; /* Centraliza o título dentro da descrição */
+        }
+        .descricao{
+            margin-bottom: 10px;
+            margin-top: 150px; /* Aumenta a margem superior para o texto */
+        }
+        .descricao2bandas {
+            margin-bottom: 10px;
+        }
+        .descricao3bandas {
+            margin-bottom: 10px;
+        }
+        .info2 img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+        .album-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1040px;
+            height: 75px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .album-container a {
+            display: block; /* Torna o link um bloco */
+            padding: 20px 100px; /
+            background-color: #808080;
+            border-radius: 10px;
+            text-decoration: none; /* Remove o sublinhado do link */
+            color: #333;
+        }
+        .album-container a:hover {
+            background-color: #bbb;
+        }
+
+
+
+
+
+    .grid-album {
+            display: flex;
+            flex-direction: column; /* Altera a direção do layout para uma coluna */
+            align-items: center; /* Centraliza as caixas horizontalmente */
+            margin-top: 20px;
+        }
+        .album-container2 {
+            display: flex;
+            justify-content: space-between; /* Distribui o espaço entre os itens */
+            width: 600px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .album-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1; /* Ocupa o espaço disponível */
+            margin-right: 20px;
+        }
+        .album-info-box {
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .album-container2 h3 {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .album-container2 p {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .album-container2 .ano-lancamento {
+            font-weight: bold;
+        }
+        .album-container2 ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .album-container2 ul li {
+            margin-bottom: 5px;
+        }
+        .album-container2 ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .album-container2 button {
+            display: block;
+            width: 100%; /* Faz com que o botão ocupe toda a largura da caixa */
+        }
+        .album-image {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+
+      .musica-container {
+            display: flex; /* Usar flexbox para posicionar os elementos dentro da caixa */
+            width: 600px; /* Define a largura da caixa da música */
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px; /* Adiciona margem entre as caixas de músicas */
+        }
+        .musica-container .conteudo {
+            flex: 1; /* Ocupa todo o espaço disponível na caixa */
+            text-align: center;
+        }
+        .musica-container h3 {
+            margin-bottom: 50px;
+            margin-top: 0; /* Remova a margem superior para o título */
+        }
+        .musica-container p {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .musica-container .button-container {
+            text-align: left;
+        }
+        .musica-container button {
+            width: 50%; /* Faz com que o botão ocupe metade da largura da caixa */
+            margin-top: 10px;
+        }
+        .musica-container .icon {
+            margin-left: 10px; /* Adiciona um espaço entre o título e o ícone */
+        }
+        .musica-container .album-image {
+            max-width: 125px; /* Define uma largura máxima para a imagem */
+            max-height: 125px;
+            margin-top: 10px;
+            border: 2px solid gray;
+            border-radius: 15px;
+        }
+
+        .musica-container .VAAAA {
+            margin-bottom: 10px;
+            margin-left: 150px;
+        }
+@media screen and (max-width: 600px) {
+    /* Redimensiona as imagens */
+    .imagem-borda img {
+        max-width: 100%;
+        height: auto;
+    }
+    .info2 img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 10px;
+    }
+    .album-image {
+        max-width: 100%; /
+        height: auto;
+        border-radius: 10px;
+    }
+    .musica-container .album-image {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+
+    .grid-albuns,
+    .grid-musicas,
+    .banda-container2,
+    .album-container,
+    .album-container2,
+    .musica-container {
+        width: 100%; /* Faz com que os elementos ocupem toda a largura disponível */
+    }
+
+    /* Ajustes específicos de layout */
+    .descricao {
+        margin-top: 50px; /* Reduz a margem superior */
+    }
+    .descricao-container {
+        max-width: 100%; /* Define a largura máxima da descrição */
+    }
+    .musica-container .conteudo {
+        text-align: center; /* Centraliza o conteúdo */
+    }
+    .musica-container .VAAAA {
+        margin-left: 0; /* Remove a margem esquerda */
+    }
+
+     .grid-banda {
+        flex-direction: column; /* Altera a direção do layout para uma coluna */
+        align-items: center; /* Centraliza os elementos na horizontal */
+    }
+    .banda-container2 img {
+        max-width: 50%; /* Define a largura máxima da imagem */
+        height: auto;
+        margin-bottom: 10px;
+    }
+}

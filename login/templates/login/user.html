@@ -1,0 +1,42 @@
+{% extends 'login/layout.html' %}
+
+{% block content %}
+<style>
+    /* Styling for the block of content */
+    .user-info {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-info h3 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .user-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .user-info li {
+        margin-bottom: 10px;
+    }
+
+    .user-info li:first-child {
+        font-weight: bold;
+    }
+</style>
+
+<div class="user-info">
+    <h3>Bem vindo, {{ request.user.first_name }} {{ request.user.last_name }}</h3>
+
+    <ul>
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+</div>
+{% endblock %}

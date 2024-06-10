@@ -1,0 +1,37 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+    <style>
+
+    </style>
+
+    <div class="page-title">
+        <h2>Todos os Artigos</h2>
+    </div>
+
+    <div class="grid-artigos">
+        {% for artigo in artigos %}
+            <div class="artigo-container">
+                <div class="artigo-titulo">{{ artigo.titulo }}</div>
+                <div class="artigo-autor">
+                    <img src="{{ artigo.autor.imagem.url }}" alt="{{ artigo.autor.nome }}" width="50" height="50">
+                    <span>{{ artigo.autor.nome }}</span>
+                </div>
+                <div class="artigo-resumo">{{ artigo.resumo }}</div>
+                <div class="ver-mais-container">
+                    <a href="https://a22202315.pythonanywhere.com/Blog/id/{{ artigo.titulo }}/" class="ver-mais">Ver mais</a>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if request.user.is_authenticated %}
+            <div class="novo-artigo-container">
+                <div class="ver-mais-container">
+                    <a href="https://a22202315.pythonanywhere.com/Blog/artigo/novo" class="ver-mais"><button>Inserir novo artigo</button></a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+

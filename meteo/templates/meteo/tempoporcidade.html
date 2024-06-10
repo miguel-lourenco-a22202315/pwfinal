@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão Meteorológica para Setúbal</title>
+                  {% load static %}
+    <link rel="stylesheet" href="{% static 'meteo/tempo5.css' %}">
+
+
+
+
+</head>
+<body>
+    <h1>Previsão Meteorológica para {{ cidade }}</h1>
+    <h2>Próximos 5 dias:</h2>
+    <ul>
+        {% for dia in previsao %}
+            <li>
+                <p>{{ dia.forecastDate }}</p>
+                {% load static %}
+                {% if dia.idWeatherType <= 9 %}
+                    <img src="{% static 'meteo/w_ic_d_0' %}{{ dia.idWeatherType }}anim.svg" alt="Ícone do Tempo" class="weather-icon">
+                {% else %}
+                    <img src="{% static 'meteo/w_ic_d_' %}{{ dia.idWeatherType }}anim.svg" alt="Ícone do Tempo" class="weather-icon">
+                {% endif %}
+                <div class="weather-info">
+                    <p><strong>Temperatura Máxima:</strong> {{ dia.tMax }}°C</p>
+                    <p><strong>Temperatura Mínima:</strong> {{ dia.tMin }}°C</p>
+                    {% if dia.tipo_tempo_descricao %}
+                        <p><strong>Descrição do Tempo:</strong> {{ dia.tipo_tempo_descricao }}</p>
+                    {% else %}
+                        <p><strong>Descrição do Tempo:</strong> Indisponível</p>
+                    {% endif %}
+
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

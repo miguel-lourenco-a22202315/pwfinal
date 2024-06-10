@@ -1,0 +1,19 @@
+{% extends 'festivalappcertaparaoteste/layout.html' %}
+
+{% block content %}
+
+{{ festivaiss.nome  }}
+{{ festivaiss.imagem }}
+
+    <h2>Todas as bandas</h2>
+
+    <ul>
+    {% for bandas in band %}
+    <p>{{ bandas.nome }}</p>
+
+
+
+    {% endfor %}
+    </ul>
+
+{% endblock %}

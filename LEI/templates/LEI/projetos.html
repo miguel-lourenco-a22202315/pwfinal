@@ -1,0 +1,28 @@
+{% extends 'LEI/layout.html' %}
+
+{% block content %}
+
+    <h2>Todas os  projetos da disciplina : </h2>
+ <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/rock/"> cunsulte aqui  </a>
+ <p> exemplo dos projetos uma vez que o projeto tem um erro que  necessita da  ajuda dos professoress </p>
+{% if request.user.is_authenticated %}
+         <a href="https://a22202315.pythonanywhere.com/Lusofona/disciplina/novo">
+        <button>Inserir novo projeto</button>
+    </a>
+    {% endif %}
+    <ul>
+    {% for projeto in projetos %}
+        <li>
+            <h3>{{ projeto.nome}}</h3>
+
+            <ul>
+ <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/{{ projeto.nome }}/"> {{ projeto.nome}} </a>
+
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+

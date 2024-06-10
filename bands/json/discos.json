@@ -1,0 +1,242 @@
+{
+  "discos": [
+    {
+      "titulo": "Led Zeppelin IV",
+      "ano_lancamento": 1971,
+      "banda": "Led Zeppelin",
+      "musicas": [
+        {"titulo": "Stairway to Heaven", "duracao": "8:02"},
+        {"titulo": "Black Dog", "duracao": "4:55"},
+        {"titulo": "Rock and Roll", "duracao": "3:40"},
+        {"titulo": "Going to California", "duracao": "3:31"},
+        {"titulo": "When the Levee Breaks", "duracao": "7:07"}
+      ]
+    },
+    {
+      "titulo": "A Night at the Opera",
+      "ano_lancamento": 1975,
+      "banda": "Queen",
+      "musicas": [
+        {"titulo": "Bohemian Rhapsody", "duracao": "6:00"},
+        {"titulo": "You're My Best Friend", "duracao": "2:52"},
+        {"titulo": "Love of My Life", "duracao": "3:39"},
+        {"titulo": "I'm in Love with My Car", "duracao": "3:05"},
+        {"titulo": "God Save the Queen", "duracao": "1:15"}
+      ]
+    },
+    {
+      "titulo": "Let It Bleed",
+      "ano_lancamento": 1969,
+      "banda": "The Rolling Stones",
+      "musicas": [
+        {"titulo": "Gimme Shelter", "duracao": "4:31"},
+        {"titulo": "Love in Vain", "duracao": "4:19"},
+        {"titulo": "Midnight Rambler", "duracao": "6:52"},
+        {"titulo": "You Can't Always Get What You Want", "duracao": "7:28"}
+      ]
+    },
+    {
+      "titulo": "Back in Black",
+      "ano_lancamento": 1980,
+      "banda": "AC/DC",
+      "musicas": [
+        {"titulo": "Hells Bells", "duracao": "5:10"},
+        {"titulo": "Back in Black", "duracao": "4:15"},
+        {"titulo": "You Shook Me All Night Long", "duracao": "3:30"},
+        {"titulo": "Rock and Roll Ain't Noise Pollution", "duracao": "4:15"}
+      ]
+    },
+    {
+      "titulo": "The Dark Side of the Moon",
+      "ano_lancamento": 1973,
+      "banda": "Pink Floyd",
+      "musicas": [
+        {"titulo": "Speak to Me", "duracao": "1:13"},
+        {"titulo": "Breathe", "duracao": "2:43"},
+        {"titulo": "On the Run", "duracao": "3:36"},
+        {"titulo": "Time", "duracao": "6:53"},
+        {"titulo": "The Great Gig in the Sky", "duracao": "4:44"}
+      ]
+    },
+    {
+      "titulo": "Abbey Road",
+      "ano_lancamento": 1969,
+      "banda": "The Beatles",
+      "musicas": [
+        {"titulo": "Come Together", "duracao": "4:20"},
+        {"titulo": "Something", "duracao": "3:03"},
+        {"titulo": "Octopus's Garden", "duracao": "2:51"},
+        {"titulo": "Here Comes the Sun", "duracao": "3:05"},
+        {"titulo": "The End", "duracao": "2:20"}
+      ]
+    },
+    {
+      "titulo": "Nevermind",
+      "ano_lancamento": 1991,
+      "banda": "Nirvana",
+      "musicas": [
+        {"titulo": "Smells Like Teen Spirit", "duracao": "5:01"},
+        {"titulo": "Come as You Are", "duracao": "3:38"},
+        {"titulo": "Lithium", "duracao": "4:17"},
+        {"titulo": "In Bloom", "duracao": "4:15"},
+        {"titulo": "Polly", "duracao": "2:56"}
+      ]
+    },
+    {
+      "titulo": "The Joshua Tree",
+      "ano_lancamento": 1987,
+      "banda": "U2",
+      "musicas": [
+        {"titulo": "Where the Streets Have No Name", "duracao": "5:38"},
+        {"titulo": "I Still Haven't Found What I'm Looking For", "duracao": "4:37"},
+        {"titulo": "With or Without You", "duracao": "4:56"},
+        {"titulo": "Bullet the Blue Sky", "duracao": "4:32"},
+        {"titulo": "Running to Stand Still", "duracao": "4:18"}
+      ]
+    },
+    {
+      "titulo": "Appetite for Destruction",
+      "ano_lancamento": 1987,
+      "banda": "Guns N' Roses",
+      "musicas": [
+        {"titulo": "Welcome to the Jungle", "duracao": "4:31"},
+        {"titulo": "Sweet Child o' Mine", "duracao": "5:56"},
+        {"titulo": "Paradise City", "duracao": "6:46"},
+        {"titulo": "Nightrain", "duracao": "4:26"},
+        {"titulo": "Rocket Queen", "duracao": "6:13"}
+      ]
+    },
+    {
+      "titulo": "Strange Days",
+      "ano_lancamento": 1967,
+      "banda": "The Doors",
+      "musicas": [
+        {"titulo": "Strange Days", "duracao": "3:09"},
+        {"titulo": "Love Me Two Times", "duracao": "3:18"},
+        {"titulo": "People Are Strange", "duracao": "2:12"},
+        {"titulo": "Moonlight Drive", "duracao": "3:04"},
+        {"titulo": "When the Music's Over", "duracao": "10:58"}
+      ]
+    },
+    {
+      "titulo": "Led Zeppelin II",
+      "ano_lancamento": 1969,
+      "banda": "Led Zeppelin",
+      "musicas": [
+        {"titulo": "Whole Lotta Love", "duracao": "5:33"},
+        {"titulo": "What Is and What Should Never Be", "duracao": "4:47"},
+        {"titulo": "The Lemon Song", "duracao": "6:20"},
+        {"titulo": "Thank You", "duracao": "4:49"},
+        {"titulo": "Bring It On Home", "duracao": "4:21"}
+      ]
+    },
+    {
+      "titulo": "Greatest Hits",
+      "ano_lancamento": 1981,
+      "banda": "Queen",
+      "musicas": [
+        {"titulo": "Another One Bites the Dust", "duracao": "3:35"},
+        {"titulo": "Bicycle Race", "duracao": "3:01"},
+        {"titulo": "Killer Queen", "duracao": "3:01"},
+        {"titulo": "Don't Stop Me Now", "duracao": "3:29"},
+        {"titulo": "Bohemian Rhapsody", "duracao": "6:00"}
+      ]
+    },
+    {
+      "titulo": "Beggars Banquet",
+      "ano_lancamento": 1968,
+      "banda": "The Rolling Stones",
+      "musicas": [
+        {"titulo": "Sympathy for the Devil", "duracao": "6:18"},
+        {"titulo": "No Expectations", "duracao": "3:56"},
+        {"titulo": "Street Fighting Man", "duracao": "3:16"},
+        {"titulo": "Stray Cat Blues", "duracao": "4:38"},
+        {"titulo": "Salt of the Earth", "duracao": "4:48"}
+      ]
+    },
+    {
+      "titulo": "Highway to Hell",
+      "ano_lancamento": 1979,
+      "banda": "AC/DC",
+      "musicas": [
+        {"titulo": "Highway to Hell", "duracao": "3:28"},
+        {"titulo": "Girls Got Rhythm", "duracao": "3:23"},
+        {"titulo": "Touch Too Much", "duracao": "4:25"},
+        {"titulo": "If You Want Blood (You've Got It)", "duracao": "4:36"},
+        {"titulo": "Night Prowler", "duracao": "6:13"}
+      ]
+    },
+    {
+      "titulo": "Wish You Were Here",
+      "ano_lancamento": 1975,
+      "banda": "Pink Floyd",
+      "musicas": [
+        {"titulo": "Shine On You Crazy Diamond (Parts I-V)", "duracao": "13:40"},
+        {"titulo": "Welcome to the Machine", "duracao": "7:30"},
+        {"titulo": "Have a Cigar", "duracao": "5:24"},
+        {"titulo": "Wish You Were Here", "duracao": "5:34"},
+        {"titulo": "Shine On You Crazy Diamond (Parts VI-IX)", "duracao": "12:29"}
+      ]
+    },
+    {
+      "titulo": "Revolver",
+      "ano_lancamento": 1966,
+      "banda": "The Beatles",
+      "musicas": [
+        {"titulo": "Taxman", "duracao": "2:39"},
+        {"titulo": "Eleanor Rigby", "duracao": "2:08"},
+        {"titulo": "I'm Only Sleeping", "duracao": "3:00"},
+        {"titulo": "Here, There and Everywhere", "duracao": "2:25"},
+        {"titulo": "Yellow Submarine", "duracao": "2:38"}
+      ]
+    },
+    {
+      "titulo": "In Utero",
+      "ano_lancamento": 1993,
+      "banda": "Nirvana",
+      "musicas": [
+        {"titulo": "Serve the Servants", "duracao": "3:36"},
+        {"titulo": "Heart-Shaped Box", "duracao": "4:41"},
+        {"titulo": "Rape Me", "duracao": "2:50"},
+        {"titulo": "Frances Farmer Will Have Her Revenge on Seattle", "duracao": "4:07"},
+        {"titulo": "All Apologies", "duracao": "3:51"}
+      ]
+    },
+    {
+      "titulo": "War",
+      "ano_lancamento": 1983,
+      "banda": "U2",
+      "musicas": [
+        {"titulo": "Sunday Bloody Sunday", "duracao": "4:38"},
+        {"titulo": "New Year's Day", "duracao": "5:38"},
+        {"titulo": "Seconds", "duracao": "3:09"},
+        {"titulo": "Like a Song...", "duracao": "4:48"},
+        {"titulo": "Two Hearts Beat as One", "duracao": "4:03"}
+      ]
+    },
+    {
+      "titulo": "Use Your Illusion I",
+      "ano_lancamento": 1991,
+      "banda": "Guns N' Roses",
+      "musicas": [
+        {"titulo": "Don't Cry", "duracao": "4:45"},
+        {"titulo": "November Rain", "duracao": "8:57"},
+        {"titulo": "Live and Let Die", "duracao": "3:04"},
+        {"titulo": "You Could Be Mine", "duracao": "5:43"},
+        {"titulo": "Dead Horse", "duracao": "4:17"}
+      ]
+    },
+    {
+      "titulo": "The Doors",
+      "ano_lancamento": 1967,
+      "banda": "The Doors",
+      "musicas": [
+        {"titulo": "Break On Through (To the Other Side)", "duracao": "2:29"},
+        {"titulo": "Soul Kitchen", "duracao": "3:35"},
+        {"titulo": "The Crystal Ship", "duracao": "2:34"},
+        {"titulo": "Twentieth Century Fox", "duracao": "2:33"},
+        {"titulo": "Light My Fire", "duracao": "7:06"}
+      ]
+    }
+  ]
+}

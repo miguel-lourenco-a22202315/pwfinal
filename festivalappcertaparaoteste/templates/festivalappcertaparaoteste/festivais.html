@@ -1,0 +1,17 @@
+{% extends 'festivalappcertaparaoteste/layout.html' %}
+
+{% block content %}
+
+    <h2>Todos os festivais /h2>
+
+    <ul>
+    {% for festivai in festivaiss %}
+    <p>{{ festivaiss.nome }}</p>
+
+
+     <p>  <a href="https://a22202315.pythonanywhere.com/Festivais/festival/{{festivai.nome}}/"> {{ festivai.nome }} </a>   </p>
+
+    {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+<!-- tempo5.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão Meteorológica</title>
+</head>
+<body>
+    <h1>Previsão Meteorológica</h1>
+    
+   <form id="previsao_form" method="post">
+    {% csrf_token %}
+    <select name="cidade_selecionada" onchange="document.getElementById('previsao_form').submit();">
+        <option value="lisboa" selected>Selecione uma cidade</option>
+        {% for cidade in cidades %}
+            <option value="{{ cidade }}">{{ cidade }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+
+    
+    {% if previsao %}
+        <h2>Próximos 5 dias:</h2>
+        <ul>
+            {% for dia in previsao %}
+                <li>
+                    <p><strong>Data:</strong> {{ dia.forecastDate }}</p>
+                    <p><strong>Temperatura Mínima:</strong> {{ dia.tMin }}°C</p>
+                    <p><strong>Temperatura Máxima:</strong> {{ dia.tMax }}°C</p>
+                    {% if dia.tipo_tempo_descricao %}
+                        <p><strong>Descrição do Tempo:</strong> {{ dia.tipo_tempo_descricao }}</p>
+                    {% else %}
+                        <p><strong>Descrição do Tempo:</strong> Indisponível</p>
+                    {% endif %}
+                    <img src="https://www.ipma.pt/bin/icons/weather-type-{{ dia.idWeatherType }}.svg" alt="Ícone do Tempo">
+                    {{ dia.idWeatherType }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if erro %}
+        <p>{{ erro }}</p>
+    {% endif %}
+</body>
+</html>
+

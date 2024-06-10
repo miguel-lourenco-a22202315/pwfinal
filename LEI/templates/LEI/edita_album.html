@@ -1,0 +1,12 @@
+{% extends 'LEI/layout.html' %}
+
+{% block content %}
+    <h3>Editar disciplina</h3>
+
+    <form action="https://a22202315.pythonanywhere.com/Lusofona/disciplina/{{album.nome}}/edita/" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit">
+    </form>
+
+{% endblock %}

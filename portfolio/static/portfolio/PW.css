@@ -1,0 +1,82 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .parallax {
+            background-image: url("https://cdn.pixabay.com/photo/2016/11/04/13/31/css-1797778_960_720.jpg");
+            min-height: 200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 30px 0;
+            border: 3px solid #4682b4; /* Border color */
+        }
+
+        .parallax2 {
+            background-image: url("https://source.unsplash.com/xg8z_KhSorQ");
+            min-height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 30px 0;
+            border: 3px solid #4682b4;
+        }
+
+        .video-container {
+            position: relative;
+            padding: 20px;
+            background: rgba(16, 78, 139, 0.7); /* Background color with transparency */
+            margin: 30px 0;
+            border: 3px solid #4682b4;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e90ff;
+            font-size: 4em; /* Larger font size */
+        }
+
+        p, h2 {
+            text-align: center;
+            color: #333333;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+
+        .technology {
+            padding: 20px;
+            background: #ffffff;
+            margin: 20px 0;
+            border: 3px solid #4682b4;
+            border-radius: 10px;
+        }
+
+        .technology h3 {
+            color: #104e8b;
+        }
+
+        .technology p {
+            text-align: left;
+            color: #333333;
+        }

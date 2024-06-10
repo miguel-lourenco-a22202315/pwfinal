@@ -1,0 +1,27 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+    <style>
+
+    </style>
+
+    <div class="article-details">
+        <h2>Artigo {{ artigo.titulo }}</h2>
+        <p>Data de Publicação: {{ artigo.data_publicacao }}</p> <!-- Adiciona a data de publicação aqui -->
+        <p class="content"><strong>Conteúdo:</strong> {{ artigo.conteudo }}</p>
+        <p><strong>Autor:</strong> {{ artigo.autor.nome }}</p>
+        <p><a href="https://a22202315.pythonanywhere.com/Blog/comentarios_do_artigo/{{ artigo.titulo }}" class="custom-link">Comentários</a><iclass="fas fa-plus plus-icon"></i></p>
+        <p><a href="https://a22202315.pythonanywhere.com/Blog/avaliacoes_do_artigo/{{ artigo.titulo }}" class="custom-link">Avaliações</a><iclass="fas fa-plus plus-icon"></i></p>
+        {% if request.user.is_authenticated %}
+            <div class="article-actions">
+                <a href="https://a22202315.pythonanywhere.com/Blog/artigo/{{artigo.titulo}}/edita/">
+                    <button>Editar Artigo</button>
+                </a>
+                <a href="https://a22202315.pythonanywhere.com/Blog/artigo/{{artigo.titulo}}/apaga/">
+                    <button>Apagar Artigo</button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+

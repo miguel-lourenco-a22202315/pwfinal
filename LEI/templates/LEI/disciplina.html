@@ -1,0 +1,63 @@
+{% extends 'LEI/layout.html' %}
+
+{% block content %}
+    <style>
+
+    </style>
+
+    <div class="grid-container">
+        <div class="disciplina-header">
+            <h2>{{ disciplina.nome }}</h2>
+        </div>
+
+        <div class="disciplina-details">
+            <div class="disciplina-text">
+                <p><strong>Ano: </strong>{{ disciplina.ano }}</p>
+                <p><strong>Semestre: </strong>{{ disciplina.semestre }}</p>
+                <p><strong>ECTS:</strong> {{ disciplina.ects }}</p>
+                <p><strong>Area:</strong> {{ disciplina.area_cientifica }}</p>
+                <p><strong>Docentes:</strong>
+                    {% for docente in disciplina.docentes.all %}
+                        {{ docente.nome }}
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                <p><strong>Linguagens de Programação:</strong>
+                    {% for linguagem in disciplina.linguagens.all %}
+                        {{ linguagem.nome }}
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+       {% if disciplina.imagem %}
+    <div class="imagem-projeto">
+        <img src="{{ disciplina.imagem.url }}" alt="Imagem do Projeto">
+    </div>
+{% endif %}
+
+        </div>
+
+        <div class="projetos-list">
+            <h3><strong>Projetos:</strong></h3>
+            {% for projeto in disciplina.projetos.all %}
+                <div class="projeto-item">
+                    <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/{{ projeto.nome }}/{{disciplina.nome}}/">{{ projeto.nome }}</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="botoes-caixa">
+            {% if request.user.is_authenticated %}
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/disciplina/{{disciplina.nome}}/edita/">
+                    <button>Editar disciplina</button>
+                </a>
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/disciplina/{{disciplina.nome}}/apaga/">
+                    <button>Apagar disciplina</button>
+                </a>
+
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/{{disciplina.nome}}/novo"><button>Inserir novo projeto</button></a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

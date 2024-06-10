@@ -1,0 +1,445 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+}
+
+
+header {
+    background-image: url('https://informatica.ulusofona.pt/wp-content/themes/yootheme/cache/Copia-de-Obrigada-4-dca198ef.jpeg');
+    background-size: cover; /* Ajusta a imagem para cobrir todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem no cabeçalho */
+    color: white;
+    text-align: center;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-areas:
+        "title title title"
+        ". logo ."
+        "user-actions . band-actions";
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.user-actions {
+    grid-area: user-actions; /* Define a área das ações do usuário */
+    justify-self: start; /* Alinha as ações do usuário à esquerda */
+}
+
+.band-actions {
+    grid-area: band-actions; /* Define a área das ações da banda */
+    justify-self: end; /* Alinha as ações da banda à direita */
+}
+
+.logo {
+    grid-area: logo; /* Define a área do logo */
+    text-align: center; /* Alinha ao centro */
+}
+
+.logo img {
+    height: 1px;
+}
+
+header h1 {
+    grid-area: logo; /* Define a área do título */
+    margin: 0; /* Remove margens */
+    text-align: center; /* Alinha ao centro */
+     font-size: 75px;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    padding: 20px;
+    background-color: #4682B4;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #4682B4;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilos para os botões */
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para os links */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:link {
+    color: #007bff;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: purple;
+}
+
+/* Estilos para os elementos de lista */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para os títulos */
+h1 {
+    margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Estilo para centralizar o título */
+.curso-info h2 {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.curso-info h3 {
+    margin-top: 60px
+}
+
+.curso-info {
+    text-align: justify;
+}
+
+
+
+/* Estilos para o layout da página disciplina */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna */
+    gap: 20px; /* Espaçamento entre os elementos */
+}
+
+/* Estilos para o bloco de informações da disciplina */
+.disciplina-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Estilos para as ações da disciplina */
+.disciplina-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para a lista de projetos */
+.projetos-list a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Adiciona espaçamento entre os parágrafos */
+.disciplina-info p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 600px) {
+    /* Ajuste o layout do corpo da página */
+    body {
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    /* Ajuste o layout do cabeçalho */
+    .header-grid {
+        grid-template-areas:
+            "title"
+            "logo"
+            "user-actions"
+            "band-actions";
+        grid-template-columns: 1fr;
+    }
+
+    .user-actions,
+    .band-actions {
+        justify-self: center;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    /* Ajuste o layout do conteúdo principal */
+    main {
+        padding: 10px;
+    }
+
+    /* Ajuste o layout do rodapé */
+    footer {
+        padding: 10px;
+    }
+
+    /* Ajuste o layout da página disciplina */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste o contêiner do projeto */
+    .projeto-container {
+        grid-template-columns: 1fr; /* Ajusta para uma coluna */
+    }
+
+    /* Ajuste o conteúdo do projeto */
+    .projeto-info,
+    .imagem-projeto {
+        grid-column: 1; /* Coloca ambos os itens na mesma coluna */
+        text-align: center;
+    }
+
+    .imagem-projeto {
+        width: 100%;
+        height: auto;
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+
+    .band-actions2 {
+        justify-self: center; /* Centraliza os botões de ação */
+        margin-top: 20px;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+    }
+
+    .projeto-info h2 {
+        margin-bottom: 50px;
+    }
+
+    /* Ajustes adicionais para imagens */
+    img {
+        max-width: 100%; /* Garante que as imagens não ultrapassem a largura da tela */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    /* Ajustes para logo */
+    .logo img {
+        height: auto; /* Mantém a proporção da imagem do logo */
+        max-width: 100%; /* Garante que o logo não ultrapasse a largura da tela */
+    }
+}
+
+
+  .projeto-container {
+            display: flex;
+            align-items: flex-start;
+            background-color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .projeto-info-container, .imagem-projeto-container {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .projeto-info-container {
+            margin-right: 20px;
+        }
+
+        .imagem-projeto-container {
+            flex: 0 0 auto;
+            margin-left: 20px;
+        }
+
+        .projeto-info h2 {
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .projeto-info p {
+            margin-bottom: 25px;
+        }
+
+        .imagem-projeto img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .band-actions2 {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .band-actions2 button {
+            margin: 5px;
+        }
+
+
+
+.disciplina-info {
+            margin-bottom: 20px;
+        }
+
+        .disciplina-header {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .disciplina-actions {
+            margin-bottom: 20px;
+        }
+
+        .disciplina-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .disciplina-text {
+            flex: 1;
+        }
+
+        .imagem-projeto {
+            flex: 0 0 auto;
+            border: 5px solid #dcdcdc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-left: 20px;
+        }
+
+        .imagem-projeto img {
+            max-width: 400px;
+            border-radius: 15px;
+        }
+
+        .projetos-list {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .projeto-item {
+            background-color: #dcdcdc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .botoes-caixa {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+ .curso-info-box {
+            background-color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .curso-title-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .curso-title {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .disciplinas-box {
+            background-color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ano-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .curso-actions-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+

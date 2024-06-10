@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão Meteorológica para Lisboa</title>
+
+
+              {% load static %}
+    <link rel="stylesheet" href="{% static 'meteo/tempo.css' %}">
+
+</head>
+<body>
+    <div class="weather-container">
+        {% if previsao %}
+            <h1>Previsão Meteorológica para Lisboa</h1>
+            <p>{{ previsao.forecastDate }}</p>
+            {% load static %}
+            {% if previsao.idWeatherType <= 9 %}
+                <img src="{% static 'meteo/w_ic_d_0' %}{{ previsao.idWeatherType }}anim.svg" alt="Ícone do Tempo" class="weather-icon">
+            {% else %}
+                <img src="{% static 'meteo/w_ic_d_' %}{{ previsao.idWeatherType }}anim.svg" alt="Ícone do Tempo" class="weather-icon">
+            {% endif %}
+            {% if tipo_tempo.descWeatherTypePT %}
+                <p>Descrição do Tempo: {{ tipo_tempo.descWeatherTypePT }}</p>
+            {% else %}
+                <p>Descrição do Tempo: Indisponível</p>
+            {% endif %}
+            <p>Temperatura Mínima: {{ previsao.tMin }}°C</p>
+            <p>Temperatura Máxima: {{ previsao.tMax }}°C</p>
+        {% else %}
+            <p>Não foi possível obter os dados meteorológicos.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+

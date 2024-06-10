@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Blogs</title>
+    <style>
+    </style>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-grid">
+            <div></div> <!-- Espaço reservado para o logotipo -->
+            <h1>XsemX</h1> <!-- Título centralizado -->
+            <div class="user-actions">
+                {% if request.user.is_authenticated %}
+                    <a href="https://a22202315.pythonanywhere.com/Blog/logout/"><button>Logout</button></a>
+                {% else %}
+                    <a href="https://a22202315.pythonanywhere.com/Login/login/"><button>Login</button></a>
+                    <a href="https://a22202315.pythonanywhere.com/Login/registo/"><button>Regist</button></a>
+                {% endif %}
+                <a href="{% url 'Blog:todos_os_artigos' %}"><button>Home</button></a>
+            </div>
+              <div class="band-actions">
+
+    </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>2024 XsemX</p>
+    </footer>
+</body>
+</html>
+

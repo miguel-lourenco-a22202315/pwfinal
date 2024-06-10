@@ -1,0 +1,47 @@
+{% extends 'LEI/layout.html' %}
+
+{% block title %}
+    Projeto: {{ projeto.descricao }}
+{% endblock %}
+
+{% block content %}
+    <style>
+    </style>
+
+    <div class="grid-container">
+        <div class="projeto-container">
+            <div class="projeto-info-container">
+                <div class="projeto-info">
+                    <h2>{{ projeto.nome }}</h2>
+                    <p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+                    <p><strong>Conceitos Aplicados:</strong> {{ projeto.conceitos_aplicados }}</p>
+                    <p><strong>Tecnologias Utilizadas:</strong> {{ projeto.tecnologias_utilizadas }}</p>
+                    <p><strong>Linguagens de Programação:</strong>
+                        {% for linguagem in projeto.linguagens.all %}
+                            {{ linguagem.nome }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p><strong>Link do Vídeo: </strong><a href="{{ projeto.link_video }}">{{ projeto.link_video }}</a></p>
+                    <p><strong>Link do Git:</strong> <a href="{{ projeto.link_git }}">{{ projeto.link_git }}</a></p>
+                </div>
+            </div>
+            <div class="imagem-projeto-container">
+                <div class="imagem-projeto">
+                    <img src="{{ projeto.imagem.url }}" alt="Imagem do Projeto">
+                </div>
+            </div>
+        </div>
+
+        <div class="band-actions2">
+            {% if request.user.is_authenticated %}
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/{{projeto.nome}}/{{disciplina.nome}}/edita/">
+                    <button>Editar projeto</button>
+                </a>
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/projeto/{{projeto.nome}}/{{disciplina.nome}}/apaga/">
+                    <button>Apagar projeto</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

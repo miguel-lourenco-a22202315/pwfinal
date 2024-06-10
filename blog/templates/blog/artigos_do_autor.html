@@ -1,0 +1,12 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+    <h2>Todos os Artigos</h2>
+    <div class="article-list">
+        <ul>
+        {% for artigo in artigos %}
+            <li><a href="{% url 'artigos' artigo.titulo %}">{{ artigo.titulo }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

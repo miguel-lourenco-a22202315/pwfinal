@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bands/estilos.css' %}">
+    <title>Bandas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-grid">
+            <h1 class="header-title">Bandas da Lusofonía</h1>
+            <p class="header-logo"><img src="https://i.pinimg.com/236x/1e/c8/1f/1ec81f86a2ddbc03f6b454bcabc45a7a.jpg" alt="Logo"></p>
+            <div class="user-actions">
+                {% if request.user.is_authenticated %}
+
+                    <a href="https://a22202315.pythonanywhere.com/Bandas/logout/">
+                        <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </a>
+                {% else %}
+                    <a href="https://a22202315.pythonanywhere.com/Login/login/">
+                        <button><i class="fas fa-sign-in-alt"></i> Login</button>
+                    </a>
+                    <a href="https://a22202315.pythonanywhere.com/Login/registo/">
+                        <button><i class="fas fa-user-plus"></i> Regist</button>
+                    </a>
+                {% endif %}
+                <a href="https://a22202315.pythonanywhere.com/Bandas/bandas/">
+                    <button><i class="fas fa-music"></i> Home</button>
+                </a>
+            </div>
+            <div class="band-actions">
+                {% if request.user.is_authenticated %}
+                    <a href="https://a22202315.pythonanywhere.com/Bandas/banda/novo">
+                        <button><i class="fas fa-plus"></i> Inserir nova banda</button>
+                    </a>
+
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Universal</p>
+    </footer>
+</body>
+</html>

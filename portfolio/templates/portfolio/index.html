@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Página de Entrada</title>
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/p.css' %}">
+    <style>
+       .dark-mode div:nth-child(2) {
+             {% load static %}
+    background-image: url("{% static 'portfolio/Darkmode.png' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+        }
+ </style>
+</head>
+<body>
+    <main>
+        <div>
+            {% load static %}
+            <img src="{% static 'portfolio/logo-universidade-lusofona.png' %}" alt="Logo" id="darkModeToggle">
+            <span class="menu-toggle" onclick="toggleMenu(event)">☰</span>
+        </div>
+        <div>
+            <p>Bem vindo ao</p>
+          <p>meu</p>
+           <p> Portfólio</p>
+
+
+        </div>
+        <div>
+            <p>Sou um estudante de 20 anos que atualmente frequenta a licenciatura em Engenharia Informática. Estou sempre disponível para aprender e para enfrentar novos desafios. Tenho interesse particular em tecnologia, gestão e mercados financeiros, os quais pretendo utilizar na minha especialização.</p>
+            <img src="{% static 'portfolio/fotomiguel.jpeg' %}" alt="Minha Foto" class="profile-image">
+        </div>
+        <div>
+            <p id="clock"></p>
+
+            {% if previsao.idWeatherType <= 9 %}
+                <img src="{% static 'meteo/w_ic_d_0' %}{{ previsao.idWeatherType }}anim.svg" alt="Ícone do Tempo">
+            {% else %}
+                <img src="{% static 'meteo/w_ic_d_' %}{{ previsao.idWeatherType }}anim.svg" alt="Ícone do Tempo">
+            {% endif %}
+
+        </div>
+    </main>
+    <div class="menu-expandable" id="expandableMenu">
+        <a href="https://a22202315.pythonanywhere.com/Bandas/bandas/">Bandas</a>
+        <a href="https://a22202315.pythonanywhere.com/Lusofona/curso/Engenharia%20Inform%C3%A1tica/">Engenharia Informática</a>
+        <a href="https://a22202315.pythonanywhere.com/Blog/todos_os_artigos/">Blog</a>
+        <a href="https://a22202315.pythonanywhere.com/me">About-Me</a>
+        <a href="https://a22202315.pythonanywhere.com/PW">TechTools</a>
+        <a href="https://a22202315.pythonanywhere.com/Meteriologia/tempo/">Meteorologia</a>
+        <a href="https://a22202315.pythonanywhere.com/Meteriologia/cidades/">Cidades</a>
+        <a href="https://a22202315.pythonanywhere.com/Meteriologia/api/">API</a>
+        {% if request.user.is_authenticated %}
+
+                    <a href="https://a22202315.pythonanywhere.com/Login/logout/">Logout</a>
+                {% else %}
+                    <a href="https://a22202315.pythonanywhere.com/Login/login/">Login</a>
+
+                {% endif %}
+
+    </div>
+    <script>
+        // Código JavaScript para alternar o dark mode
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+            });
+        });
+
+
+        function toggleMenu(event) {
+            var menu = document.getElementById('expandableMenu');
+            menu.classList.toggle('active');
+            event.stopPropagation();
+        }
+
+        window.onclick = function(event) {
+            var menu = document.getElementById('expandableMenu');
+            if (!menu.contains(event.target) && event.target !== document.querySelector('.menu-toggle')) {
+                menu.classList.remove('active');
+            }
+        }
+
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            var formattedTime = hours + ':' + minutes + ':' + seconds;
+            var date = now.toLocaleDateString('pt-BR');
+            document.getElementById('clock').innerHTML = date + ' ' + formattedTime;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();  // Chamar imediatamente para não esperar 1 segundo
+    </script>
+</body>
+</html>
+
+

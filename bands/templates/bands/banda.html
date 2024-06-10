@@ -1,0 +1,42 @@
+{% extends 'bands/layout.html' %}
+{% block content %}
+<main>
+    <style>
+
+    </style>
+  {% if request.user.is_authenticated %}
+                        <a href="https://a22202315.pythonanywhere.com/Bandas/banda/{{ banda.nome }}/edita/">
+                            <button>Editar Banda</button>
+                        </a>
+                        <a href="https://a22202315.pythonanywhere.com/Bandas/banda/{{ banda.nome }}/apaga/">
+                            <button>Apagar Banda</button>
+                        </a>
+
+                    {% endif %}
+    <h2 class="titulobandas">{{ banda.nome }}</h2>
+
+    <div class="grid-banda">
+        <div class="banda-container2">
+            <div class="descricao-container">
+                <p class="descricaobandas">{{ banda.descricaocompleta }}</p>
+                <div class="descricao2bandas">
+                    <p>Nacionalidade: {{ banda.nacionalidade }}</p>
+                    <p class="descricao3bandas">Ano de Nascimento: {{ banda.ano_criacao }}</p>
+                </div>
+            </div>
+            <div class="info2">
+                <img src="{{ banda.imagem.url }}" class="imagem-borda">
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-banda">
+        <div class="album-container">
+            <a href="https://a22202315.pythonanywhere.com/Bandas/album/{{ banda.nome }}/">
+                Álbuns mais famosos da banda
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{% extends 'bands/layout.html' %}
+
+{% block content %}
+    <h3>Edita Musica</h3>
+    <form action="https://a22202315.pythonanywhere.com/Bandas/musicas/{{album.titulo}}/{{album2.titulo}}/edita/" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit">
+    </form>
+
+{% endblock %}

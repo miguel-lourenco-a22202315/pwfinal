@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação da API</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'meteo/api.css' %}">
+</head>
+<body>
+    <div class="content">
+        <h1>API Meteorologia</h1>
+        <p>Esta API permite consultar informações meteorológicas de várias cidades, incluindo previsões diárias e de 5 dias.</p>
+
+        <!-- Endpoints Disponíveis -->
+        <div class="section">
+            <h2>Endpoints Disponíveis</h2>
+            <ul>
+                <li><strong>Lista de Cidades:</strong> https://a22202315.pythonanywhere.com/Meteriologia/api/lista_cidades/</li>
+                <li><strong>Previsão Meteorológica de Hoje para uma Cidade:</strong> https://a22202315.pythonanywhere.com/Meteriologia/api/previsao_hoje/{cidade_id}/</li>
+                <li><strong>Previsão Meteorológica para os Próximos 5 Dias para uma Cidade:</strong> https://a22202315.pythonanywhere.com/Meteriologia/api/previsao_5dias/{cidade_id}/</li>
+            </ul>
+        </div>
+        <!-- Lista de Cidade -->
+        <div class="section">
+            <h2>Lista de Cidade</h2>
+            <p>Retorna uma lista de todas as cidades disponíveis para consultar a meteorologia.</p>
+            <h3>Formato de Resposta JSON</h3>
+            <ul>
+                <li><strong>nome:</strong> Nome da cidade</li>
+                <li><strong>ID:</strong> ID da cidade</li>
+            </ul>
+        </div>
+
+        <!-- Previsão Meteorológica de Hoje para uma Cidade -->
+        <div class="section">
+            <h2>Previsão Meteorológica de Hoje para uma Cidade</h2>
+            <p>Retorna informações meteorológicas de hoje para uma cidade específica.</p>
+            <h3>Formato de Resposta JSON</h3>
+            <ul>
+                <li><strong>nome:</strong> Nome da cidade</li>
+                <li><strong>temperatura_minima:</strong> Temperatura mínima</li>
+                <li><strong>temperatura_maxima:</strong> Temperatura máxima</li>
+                <li><strong>data:</strong> Data da previsão</li>
+                <li><strong>descricao_tempo:</strong> Descrição do tempo</li>
+                <li><strong>precipitacao:</strong> Precipitação</li>
+                <li><strong>icone_tempo:</strong> Link para o ícone do tempo</li>
+            </ul>
+        </div>
+
+        <!-- Previsão Meteorológica para os Próximos 5 Dias para uma Cidade -->
+        <div class="section">
+            <h2>Previsão Meteorológica para os Próximos 5 Dias para uma Cidade</h2>
+            <p>Retorna informações meteorológicas para os Próximos 5 dias para uma cidade específica.</p>
+<h3>Formato de Resposta JSON</h3>
+<ul>
+<li><strong>nome:</strong> Nome da cidade</li>
+<li><strong>temperatura_minima:</strong> Temperatura mínima</li>
+<li><strong>temperatura_maxima:</strong> Temperatura máxima</li>
+<li><strong>data:</strong> Data da previsão</li>
+<li><strong>descricao_tempo:</strong> Descrição do tempo</li>
+<li><strong>precipitacao:</strong> Precipitação</li>
+<li><strong>icone_tempo:</strong> Link para o ícone do tempo</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'bands/layout.html' %}
+
+{% block content %}
+    <style>
+
+    </style>
+ <a href="https://a22202315.pythonanywhere.com/Bandas/albuns/{{ banda.nome }}/novo">
+                        <button><i class="fas fa-plus"></i> Inserir novo album</button>
+                    </a>
+    <div class="grid-album">
+        {% for album in albuns %}
+            <div class="album-container2">
+                <div class="album-info">
+                    <div class="album-info-box">
+                        <h3>{{ album.titulo }}</h3>
+                        <p>Ano de lançamento do álbum: <span class="ano-lancamento">{{ album.ano_lancamento }}</span></p>
+                    </div>
+                    <div class="album-info-box">
+                        <ul>
+                            <p><a href="{{ album.link }}">Ouvir no Spotify</a></p>
+                        </ul>
+                        <p><a href="https://a22202315.pythonanywhere.com/Bandas/musica/{{album.titulo }}/">
+                            Musicas mais famosas do Álbum
+                        </a></p>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                        <a href="https://a22202315.pythonanywhere.com/Bandas/albuns/{{ album.titulo }}/{{ banda.nome }}/edita/">
+                            <button>Editar álbum</button>
+                        </a>
+                        <a href="https://a22202315.pythonanywhere.com/Bandas/albuns/{{ album.titulo }}/{{ banda.nome }}/apaga/">
+                            <button>Apagar álbum</button>
+                        </a>
+
+                    {% endif %}
+                </div>
+                <div>
+                    <img src="{{ album.imagem.url }}" class="album-image">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

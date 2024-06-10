@@ -1,0 +1,106 @@
+{% extends 'LEI/layout.html' %}
+
+{% block content %}
+    <style>
+
+    </style>
+
+    <div class="grid-container">
+        <div class="curso-title-box">
+            <div class="curso-title">
+                <h2>{{ curso.nome }}</h2>
+            </div>
+        </div>
+
+        <div class="curso-info-box">
+            <div class="info-box">
+                <p><strong>Apresentação:</strong> {{ curso.apresentacao }}</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Objetivos:</strong> {{ curso.objetivos }}</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Competências:</strong> {{ curso.competencias }}</p>
+            </div>
+            <!-- Adicione a imagem do PC aqui -->
+        </div>
+
+        <div class="disciplinas-box">
+            <h3>Disciplinas do Curso:</h3>
+            <div class="ano-box">
+                <p><strong>Disciplinas do primeiro ano:</strong></p>
+                <p>1º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "1" and disciplina.semestre == "1º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <p>2º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "1" and disciplina.semestre == "2º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ano-box">
+                <p><strong>Disciplinas do segundo ano:</strong></p>
+                <p>1º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "2" and disciplina.semestre == "1º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <p>2º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "2" and disciplina.semestre == "2º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ano-box">
+                <p><strong>Disciplinas do terceiro ano:</strong></p>
+                <p>1º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "3" and disciplina.semestre == "1º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <p>2º Semestre:</p>
+                <ul>
+                    {% for disciplina in curso.disciplina_set.all %}
+                        {% if disciplina.ano == "3" and disciplina.semestre == "2º Semestre" %}
+                            <li><a href="{% url 'disciplina' disciplina.nome %}">{{ disciplina.nome }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="curso-actions-box">
+            {% if request.user.is_authenticated %}
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/curso/{{curso.nome}}/edita/">
+                    <button>Editar curso</button>
+                </a>
+                <a href="https://a22202315.pythonanywhere.com/Lusofona/curso/{{curso.nome}}/apaga/">
+                    <button>Apagar curso</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

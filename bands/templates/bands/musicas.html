@@ -1,0 +1,51 @@
+{% extends 'bands/layout.html' %}
+
+{% block content %}
+    <style>
+  
+        
+    </style>
+
+    {% if request.user.is_authenticated %}
+        <a href="https://a22202315.pythonanywhere.com/Bandas/musicas/{{ album.titulo }}/novo">
+            <button><i class="fas fa-plus"></i> Inserir nova musica</button>
+        </a>
+    {% endif %}
+    
+    <div class="grid-musicas">
+        <h2>Todas as músicas do álbum:</h2>
+
+        <ul>
+            {% for musica in musicas %}
+                <div class="musica-container">
+                    <div class="conteudo">
+                        <h3>
+                            {{ musica.titulo }}
+                            {% if musica.letra %}
+                                <i class="fas fa-music icon"></i>
+                            {% endif %}
+                        </h3>
+                        <p><strong>Duração: </strong>{{ musica.duracao }}</p>
+                        <p><a href="{{ musica.link }}">Ouvir no Spotify</a></p>
+                        {% if musica.letra %}
+                            <p class = 'VAAAA'>{{ musica.letra }}</p>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                            <div class="button-container">
+                                <a href="https://a22202315.pythonanywhere.com/Bandas/musicas/{{ musica.titulo }}/{{ album.titulo }}/edita/">
+                                    <button>Editar música</button>
+                                </a>
+                                <a href="https://a22202315.pythonanywhere.com/Bandas/musicas/{{ musica.titulo }}/{{ album.titulo }}/apaga/">
+                                    <button>Apagar música</button>
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <img src="{{ musica.imagem.url }}" class="album-image">
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
+

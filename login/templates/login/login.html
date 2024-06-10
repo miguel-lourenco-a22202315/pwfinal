@@ -1,0 +1,73 @@
+{% extends 'login/layout.html' %}
+
+{% block content %}
+<style>
+/* Centered Box */
+.centered-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ccc;
+    padding: 40px; /* Increase padding for larger box */
+    background-color: #f0f0f0; /* Lighter background */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+    text-align: center; /* Center text within the box */
+}
+
+/* Form Styling */
+.centered-box form {
+    text-align: center;
+}
+
+.centered-box input[type="text"],
+.centered-box input[type="password"],
+.centered-box input[type="submit"] {
+    width: 80%; /* Make inputs slightly smaller than the box */
+    margin: 10px auto; /* Center inputs */
+    padding: 15px; /* Increase padding for larger inputs */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.centered-box input[type="submit"] {
+    width: 50%; /* Make button slightly smaller than inputs */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 15px; /* Increase padding for larger button */
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.centered-box input[type="submit"]:hover {
+    background-color: #45a049; /* Darker color on hover */
+}
+</style>
+
+<div class="centered-box">
+    <h3>Login</h3>
+
+    {% if mensagem %}
+        <p>Mensagem: {{ mensagem }}</p>
+    {% endif %}
+    <form action="https://a22202315.pythonanywhere.com/Login/login/" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username..">
+        <br>
+        <input type="password" name="password" placeholder="Password..">
+        <br>
+        <input type="submit" value="Login"> <!-- Changed button text to "Login" -->
+    </form>
+    {% if request.user.is_authenticated %}
+        <a href="https://a22202315.pythonanywhere.com/Login/logout/"><button>Logout</button></a>
+    {% else %}
+        <a href="https://a22202315.pythonanywhere.com/Login/registo/"><button>Regist</button></a>
+        <a href="https://a22202315.pythonanywhere.com/Login/reset_password/"><button>Reset Password</button></a>
+    {% endif %}
+</div>
+{% endblock %}
+

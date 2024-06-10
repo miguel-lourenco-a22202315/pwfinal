@@ -1,0 +1,37 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+    <style>
+    </style>
+
+    <h2>Comentários</h2>
+    <div class="comment-list">
+        {% for comentario in comentarios %}
+            <div class="comment-item">
+                <p><strong>Autor: </strong>{{ comentario.autor }}</p>
+                <p><strong>Comentário: </strong>{{ comentario.texto }}</p>
+                <p><strong>Data do Comentário:</strong> {{ comentario.data_comentario }}</p>
+                {% if request.user.is_authenticated %}
+                    <div class="comment-actions">
+                        <a href="https://a22202315.pythonanywhere.com/Blog/comentario/{{comentario.autor}}/edita/">
+                            <button>Editar Comentário</button>
+                        </a>
+                        <a href="https://a22202315.pythonanywhere.com/Blog/comentario/{{comentario.autor}}/apaga/">
+                            <button>Apagar Comentário</button>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="insert-comment-container">
+                      {% if request.user.is_authenticated %}
+                              <div class="avaliacao-button-box">
+        <a href="https://a22202315.pythonanywhere.com/Blog/comentario/novo"><button>Inserir novo comentário</button></a>
+           </div>
+          {% endif %}
+    </div>
+{% endblock %}
+
+

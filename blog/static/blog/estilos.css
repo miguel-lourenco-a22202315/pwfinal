@@ -1,0 +1,552 @@
+
+/* Cores */
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: red;
+    --cor-texto: #333;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+      margin-bottom: 2000px;
+}
+
+/* Links */
+a {
+    text-decoration: none; /* Remove decoração de texto */
+    color: var(--cor-texto);
+}
+
+a:link {
+    color: var(--cor-primaria);
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: #d4cfcf;
+}
+
+a:active {
+    color: purple;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte padrão */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da viewport */
+    margin: 0; /* Remove margens */
+    display: grid; /* Usa layout de grade */
+    grid-template-rows: auto 1fr auto ; /* Define as linhas da grade */
+    grid-template-areas:
+        "header"
+        "main"
+        "footer"; /* Define as áreas da grade */
+    height: 100vh; /* Altura da página */
+    box-sizing: border-box; /* Garante que as dimensões incluam as bordas e os preenchimentos */
+}
+
+
+
+main {
+    padding: 20px; /* Preenchimento interno */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center; /* Alinha ao centro */
+    padding: 10px; /* Preenchimento interno */
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #363535;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #969595;
+}
+
+    header {
+    background-image: url('https://static.vecteezy.com/ti/fotos-gratis/p2/2223687-textura-de-marmore-preto-natural-para-pele-azulejo-papel-de-parede-fundo-luxuoso-para-design-arte-trabalho-gratis-foto.jpg');
+    background-size: cover; /* Ajusta a imagem para cobrir todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem no cabeçalho */
+    color: white;
+    text-align: center;
+}
+
+
+
+        .header-grid {
+              display: grid;
+    grid-template-areas:
+        "title title title"
+        ". logo ."
+        "user-actions . band-actions";
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+        }
+
+header h1 {
+    grid-area: logo;
+    margin: 0;
+    text-align: center;
+     font-size: 75px;
+}
+
+.user-actions {
+    grid-area: user-actions; /* Define a área das ações do usuário */
+    justify-self: start; /* Alinha as ações do usuário à esquerda */
+}
+
+.band-actions {
+    grid-area: band-actions; /* Define a área das ações da banda */
+    justify-self: end; /* Alinha as ações da banda à direita */
+}
+
+ main {
+            background-color:#383838;
+            padding: 20px;
+
+        }
+
+footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border: none;
+}
+
+button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4px;
+    }
+
+button:hover {
+        background-color: #383838;
+
+}
+
+/* Estilos para os links */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:link {
+    color: #007bff;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: #A6A3A3;
+}
+
+a:active {
+    color: purple;
+}
+
+
+
+  .page-title {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .grid-artigos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .artigo-container {
+            width: 1670px; /
+            min-height: 150px; /* Aumenta a altura mínima para acomodar a imagem e o nome do autor */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .novo-artigo-container {
+            width: 400px;
+            min-height: 50px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .artigo-titulo, .novo-artigo-titulo {
+            color:  #333;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .artigo-autor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 60px; /* Desce a posição do autor */
+            right: 20px;
+            color: #666;
+            z-index: 1; /* Define a ordem de empilhamento para garantir que o autor fique na frente do resumo */
+        }
+        .artigo-autor img {
+            border-radius: 50%;
+            margin-bottom: 5px; /* Adiciona margem inferior para separar a imagem do nome */
+        }
+        .artigo-resumo {
+            color: #666;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 85%; /* Define a largura máxima para o texto do resumo */
+            overflow: hidden; /* Evita que o resumo se sobreponha a outros elementos */
+            z-index: 0; /* Define a ordem de empilhamento para garantir que o resumo fique atrás do autor */
+            margin: 10px auto; /* Adiciona margem superior e inferior para separar do restante do conteúdo */
+        }
+        .ver-mais-container {
+            text-align: center;
+            margin-top: 10px; /* Adiciona margem acima do "ver mais" */
+        }
+        .ver-mais {
+            text-decoration: none;
+            color: #a6a6a6;
+            margin-top: 10px; /* Aplica a margem de 10px apenas ao "ver mais" */
+        }
+        .novo-artigo-botao {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .novo-artigo-botao:hover {
+            background-color: #0056b3;
+        }
+
+
+ .article-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: center; /* Centraliza o conteúdo */
+        }
+        .article-details h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .article-details p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .custom-link {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        .custom-link:hover {
+            color: #0056b3;
+        }
+        .article-details button {
+            background-color: #dbd9d9;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .article-details button:hover {
+            background-color: #d1bebe;
+        }
+        .article-actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .article-details p.content {
+        text-align: justify; /* Justifica o texto */
+    }
+
+
+ .comment-list {
+            margin-top: 20px;
+        }
+
+        .comment-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .comment-item p {
+            margin: 5px 0;
+              margin-right: 20px;
+        padding-right: 100px;
+        color : #666;
+        }
+
+        .comment-actions {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .comment-actions a {
+            text-decoration: none;
+        }
+
+        .comment-actions button {
+            background-color: #d9d4d4;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .comment-actions button:hover {
+            background-color: #c4bbbb;
+        }
+
+        .insert-comment-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* Estilos para centralizar o título */
+        h2 {
+            text-align: center;
+            font-size: 36px; /* Define o tamanho da fonte para o título */
+        }
+
+
+          .avaliacao-button-box {
+            display: inline-block;            /* mudar o inclene box  */
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px 60px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+   .VA h2 {
+            text-align: center;
+            margin-bottom: 20px; /* Adiciona margem inferior para separar o título das avaliações */
+            font-size: 36px;
+        }
+
+        .avaliacao-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .avaliacao-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .avaliacao-item p {
+            margin: 5px 0;
+        }
+
+        .avaliacao-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .avaliacao-actions a {
+            text-decoration: none;
+        }
+
+        .avaliacao-actions button {
+            background-color: #d9d4d4;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .avaliacao-actions button:hover {
+            background-color: #969595;
+        }
+
+        /* Estilos para centralizar o texto "Nenhuma avaliação disponível para este artigo." */
+        .no-avaliacao {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para centralizar o botão "Inserir nova avaliação" e a caixa ao redor dele */
+        .insert-avaliacao-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .avaliacao-button-box {
+            display: inline-block;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px 60px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+@media (max-width: 600px) {
+
+
+    /* Estilos para o corpo da página */
+    body {
+        grid-template-rows: auto 1fr auto; /
+    }
+
+    /* Estilos para o título do cabeçalho */
+    header h1 {
+        font-size: 40px;
+    }
+
+    /* Estilos para o grid do cabeçalho */
+    .header-grid {
+        grid-template-areas:
+            "title"
+            "logo"
+            "user-actions"
+            "band-actions";
+        grid-template-columns: 1fr; /* Define uma coluna */
+    }
+
+    /* Estilos para as ações do usuário e da banda */
+    .user-actions,
+    .band-actions {
+        justify-self: center; /* Centraliza os itens */
+    }
+
+    /* Estilos para o conteúdo principal */
+    main {
+        padding: 10px;
+    }
+
+    /* Estilos para o rodapé */
+    footer {
+        padding: 10px;
+    }
+
+    /* Estilos para os botões */
+    button {
+    padding: 8px 16px; /* Reduz o preenchimento interno do botão */
+    font-size: 14px; /* Diminui o tamanho do texto do botão */
+    background-color: #383838;
+}
+
+
+    button:hover {
+        background-color: #969595;
+    }
+
+    /* Estilos para os links */
+    a:link {
+        color: var(--cor-primaria);
+    }
+
+    a:hover {
+        color: #A6A3A3;
+    }
+
+    /* Estilos para o título da página */
+    .page-title {
+        font-size: 20px; /* Reduz o tamanho da fonte */
+    }
+
+    /* Estilos para os contêineres de artigos */
+    .novo-artigo-container {
+        width: 95%;
+    }
+
+.artigo-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.artigo-autor {
+    order: 1; /* Define a ordem para ser o último item */
+}
+
+
+.artigo-autor img {
+    width: 25px; /* Redimensiona a largura da imagem */
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px; /* Adiciona margem à direita da imagem */
+}
+
+.artigo-autor span {
+        display: none; /* Esconde o nome do autor  */
+    }
+}
+

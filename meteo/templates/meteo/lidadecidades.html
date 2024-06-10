@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cidades Disponíveis</title>
+                      {% load static %}
+    <link rel="stylesheet" href="{% static 'meteo/cidades.css' %}">
+
+
+</head>
+<body>
+    <h1>Lista de Cidades Disponíveis</h1>
+    <ul>
+        {% for cidade, id_cidade in cidades.items %}
+            <li>
+                <p>{{ cidade }}</p>
+                <a href="{% url 'lista_cidades2' id_cidade cidade %}">Ver Previsão Meteorológica</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
